@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="560.0" prefWidth="800.0" style="-fx-background-color: linear-gradient(to bottom right, deepskyblue, aliceblue);" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View_Controller.MainScreenController">
+    <children>
+        <Label fx:id="mainScreenLabel" layoutX="245.0" layoutY="33.0" text="Appointment Management System" textFill="WHITE">
+            <font>
+                <Font size="19.0" />
+            </font>
+        </Label>
+        <Label fx:id="mainMenuLabel" layoutX="325.0" layoutY="57.0" text="Main Menu" textFill="WHITE">
+            <font>
+                <Font size="29.0" />
+            </font>
+        </Label>
+        <Button fx:id="exitButton" layoutX="34.0" layoutY="152.0" mnemonicParsing="false" onAction="#ExitHandler" prefHeight="26.0" prefWidth="59.0" text="Exit" textFill="RED" />
+        <Button fx:id="logoutButton" layoutX="726.0" layoutY="153.0" mnemonicParsing="false" onAction="#LogoutHandler" prefHeight="18.0" prefWidth="59.0" text="Logout" textFill="RED" />
+        <AnchorPane layoutY="195.0" prefHeight="366.0" prefWidth="800.0" style="-fx-background-color: whitesmoke;">
+            <children>
+                <Label layoutX="6.0" layoutY="28.0" text="Appointment Schedule" underline="true">
+                    <font>
+                        <Font size="22.0" />
+                    </font>
+                </Label>
+                <DatePicker fx:id="datePicker" layoutX="643.0" layoutY="28.0" onAction="#DateHandler" prefHeight="27.0" prefWidth="150.0" promptText="Select a date" />
+                <RadioButton fx:id="weeklyRadio" layoutX="272.0" layoutY="33.0" mnemonicParsing="false" onAction="#WeeklyHandler" text="View by Week" />
+                <RadioButton fx:id="monthlyRadio" layoutX="416.0" layoutY="33.0" mnemonicParsing="false" onAction="#MonthlyHandler" text="View by Month" />
+                <RadioButton fx:id="allRadio" layoutX="560.0" layoutY="33.0" mnemonicParsing="false" onAction="#AllHandler" text="View All" />
+                <Label fx:id="timeZoneLabel" layoutX="6.0" layoutY="69.0" text="Time Zone: ">
+                    <font>
+                        <Font size="9.0" />
+                    </font>
+                </Label>
+            </children></AnchorPane>
+        <TableView fx:id="mainCalendarTableView" layoutX="5.0" layoutY="286.0" prefHeight="267.0" prefWidth="790.0" style="-fx-background-color: whitesmoke;">
+            <columns>
+                <TableColumn fx:id="apptIdCol" prefWidth="53.0" text="Appt ID" />
+                <TableColumn fx:id="custCol" prefWidth="107.0" text="Customer" />
+                <TableColumn fx:id="titleCol" prefWidth="72.0" text="Title" />
+                <TableColumn fx:id="descriptionCol" prefWidth="89.0" text="Description" />
+                <TableColumn fx:id="locationCol" prefWidth="74.0" text="Location" />
+                <TableColumn fx:id="typeCol" prefWidth="74.0" text="Type" />
+                <TableColumn fx:id="dateCol" prefWidth="88.39996337890625" text="Date" />
+                <TableColumn fx:id="startTimeCol" prefWidth="85.5999755859375" text="Start Time" />
+                <TableColumn fx:id="endTimeCol" minWidth="6.20001220703125" prefWidth="69.5999755859375" text="End Time" />
+            <TableColumn fx:id="UserColumn" prefWidth="72.99993896484375" text="User" />
+            </columns>
+        </TableView>
+        <ButtonBar layoutX="12.0" layoutY="108.0" prefHeight="40.0" prefWidth="775.0">
+            <buttons>
+                <Button fx:id="addCustomerButton" mnemonicParsing="false" onAction="#AddCustomerHandler" text="Add Customer" />
+                <Button fx:id="modifyCustomerButton" mnemonicParsing="false" onAction="#EditCustomerHandler" text="Edit Customer" />
+                <Button fx:id="addAppointmentButton" mnemonicParsing="false" onAction="#AddApptHandler" prefHeight="27.0" text="Add Appointment" />
+                <Button fx:id="modifyAppointmentButton" mnemonicParsing="false" onAction="#EditApptHandler" prefHeight="27.0" prefWidth="192.0" text="Edit Appointment" />
+                <Button fx:id="reportsButton" mnemonicParsing="false" onAction="#ReportHandler" text="Reports" />
+            </buttons>
+        </ButtonBar>
+    </children>
+</AnchorPane>

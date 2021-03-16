@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="523.0" prefWidth="1008.0" style="-fx-background-color: linear-gradient(to bottom right, deepskyblue, aliceblue);" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View_Controller.ModifyAppointmentController">
+    <children>
+        <Label layoutX="394.0" layoutY="20.0" text="Modify Appointment" textFill="WHITE">
+            <font>
+                <Font size="23.0" />
+            </font>
+        </Label>
+        <AnchorPane layoutX="-1.0" layoutY="64.0" prefHeight="241.0" prefWidth="1008.0" style="-fx-background-color: whitesmoke;">
+            <children>
+                <Button fx:id="editButton" layoutX="875.0" layoutY="204.0" mnemonicParsing="false" onAction="#EditHandler" prefHeight="27.0" prefWidth="58.0" text="Edit" />
+                <Button fx:id="deleteButton" layoutX="938.0" layoutY="204.0" mnemonicParsing="false" onAction="#DeleteHandler" text="Delete" textFill="RED" />
+                <TextField fx:id="searchField" alignment="CENTER" layoutX="756.0" layoutY="11.0" prefHeight="26.0" prefWidth="162.0" promptText="Search by Appt ID or TItle" />
+                <Button fx:id="searchButton" layoutX="937.0" layoutY="11.0" mnemonicParsing="false" onAction="#SearchHandler" text="Search" />
+            </children></AnchorPane>
+        <TableView fx:id="appointmentTableView" layoutX="6.0" layoutY="111.0" prefHeight="149.0" prefWidth="990.0" style="-fx-background-color: whitesmoke;">
+            <columns>
+                <TableColumn fx:id="apptIdCol" prefWidth="53.0" text="Appt ID" />
+                <TableColumn fx:id="custCol" prefWidth="114.0" text="Customer" />
+                <TableColumn fx:id="titleCol" prefWidth="99.0" text="Title" />
+                <TableColumn fx:id="descCol" prefWidth="98.60003662109375" text="Description" />
+                <TableColumn fx:id="locCol" prefWidth="93.39996337890625" text="Location" />
+                <TableColumn fx:id="contactCol" prefWidth="105.20001220703125" text="Contact" />
+                <TableColumn fx:id="typeCol" prefWidth="94.5999755859375" text="Type" />
+                <TableColumn fx:id="dateCol" prefWidth="92.199951171875" text="Date" />
+                <TableColumn fx:id="startCol" prefWidth="113.4000244140625" text="Start Time" />
+                <TableColumn fx:id="endCol" prefWidth="53.39990234375" text="End Time" />
+            <TableColumn fx:id="UserColumn" prefWidth="68.7999267578125" text="User" />
+            </columns>
+        </TableView>
+        <GridPane layoutX="68.0" layoutY="316.0" prefHeight="176.0" prefWidth="872.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="131.0" minWidth="10.0" prefWidth="102.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="207.0" minWidth="10.0" prefWidth="207.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="175.0" minWidth="10.0" prefWidth="54.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="175.0" minWidth="10.0" prefWidth="98.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="237.0" minWidth="10.0" prefWidth="237.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="193.0" minWidth="10.0" prefWidth="59.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="193.0" minWidth="10.0" prefWidth="117.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="202.0" minWidth="10.0" prefWidth="202.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="41.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="41.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Label text="Customer ID" textFill="WHITE" GridPane.rowIndex="1" />
+                <Label text="Title" textFill="WHITE" GridPane.rowIndex="2" />
+                <Label text="Description" textFill="WHITE" GridPane.rowIndex="3" />
+                <Label text="Location" textFill="WHITE" GridPane.columnIndex="3" />
+                <Label text="Contact" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                <TextField fx:id="titleField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <TextField fx:id="descriptionField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <Label text="Date" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                <Label text="Start Time" textFill="WHITE" GridPane.columnIndex="6" />
+                <Label text="End Time" textFill="WHITE" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+                <DatePicker fx:id="datePicker" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                <TextField fx:id="nameField" disable="true" editable="false" maxWidth="-Infinity" prefHeight="27.0" prefWidth="31.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Label text="Type" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                <TextField fx:id="locationField" GridPane.columnIndex="4" />
+                <ComboBox fx:id="typeComboBox" prefHeight="27.0" prefWidth="171.0" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                <ComboBox fx:id="endTimeComboBox" prefWidth="150.0" GridPane.columnIndex="7" GridPane.rowIndex="1" />
+                <ComboBox fx:id="startTimeComboBox" prefWidth="150.0" GridPane.columnIndex="7" />
+                <Label text="Appt ID" textFill="WHITE" />
+            <ComboBox fx:id="contactComboBox" prefHeight="26.0" prefWidth="210.0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+            <Label text="User" textFill="WHITE" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+            <ComboBox fx:id="userCombo" prefWidth="150.0" GridPane.columnIndex="7" GridPane.rowIndex="2" />
+            </children>
+        </GridPane>
+        <Label layoutX="16.0" layoutY="69.0" text="Appointments">
+            <font>
+                <Font size="19.0" />
+            </font>
+        </Label>
+        <Label layoutX="16.0" layoutY="93.0" text="Select an appointment to Edit or Delete" />
+        <TextField fx:id="idField" disable="true" editable="false" layoutX="144.0" layoutY="326.0" prefHeight="27.0" prefWidth="31.0" />
+        <ButtonBar layoutX="657.0" layoutY="457.0" prefHeight="40.0" prefWidth="256.0">
+            <buttons>
+                <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#CancelHandler" text="Exit" textFill="RED" />
+                <Button fx:id="saveButton" minWidth="0.0" mnemonicParsing="false" onAction="#SaveHandler" prefHeight="27.0" prefWidth="374.0" text="Save" textFill="#008225" />
+            </buttons>
+        </ButtonBar>
+    </children>
+</AnchorPane>

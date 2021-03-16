@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: linear-gradient(to bottom right, deepskyblue, aliceblue);" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View_Controller.ReportsController">
+    <children>
+        <TextArea fx:id="textAreaForReports" layoutX="27.0" layoutY="146.0" prefHeight="218.0" prefWidth="544.0" style="-fx-background-color: whitesmoke;" />
+        <Label fx:id="reportTextAreaLabel" layoutX="27.0" layoutY="120.0" text="Report:" textFill="WHITE" underline="true">
+            <font>
+                <Font name="System Bold" size="19.0" />
+            </font>
+        </Label>
+        <Label layoutX="249.0" layoutY="14.0" text="Reports" textFill="WHITE">
+            <font>
+                <Font size="26.0" />
+            </font>
+        </Label>
+        <Button fx:id="generateReportButton" layoutX="424.0" layoutY="61.0" mnemonicParsing="false" onAction="#GenerateHandler" text="Generate Report" />
+        <Button fx:id="resetButton" layoutX="535.0" layoutY="364.0" mnemonicParsing="false" onAction="#CancelHandler" text="Exit" textFill="RED" />
+        <ChoiceBox fx:id="reportChoiceBox" layoutX="189.0" layoutY="61.0" prefHeight="27.0" prefWidth="227.0" />
+        <Label layoutX="61.0" layoutY="66.0" text="Choose your report:" textFill="WHITE" />
+    </children>
+</AnchorPane>
